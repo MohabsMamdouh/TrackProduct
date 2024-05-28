@@ -50,19 +50,19 @@ function checkForNewProducts() {
         $newProducts = [];
         
         foreach($html->find('li.item.product.product-item.unavailable') as $product) {
-            // if (strpos($product->class, 'unavailable') === false) {
+            if (strpos($product->class, 'unavailable') === false) {
                 $productName = $product->find('strong.product.name.product-item-name a', 0)->plaintext;
                 $productLink = $product->find('a.product-item-link', 0)->href;
 
-                $normalizedProductNames = array_map('trim', $products);
+                // $normalizedProductNames = array_map('trim', $products);
 
-                if (in_array(trim($productName), $normalizedProductNames)) {
+                // if (in_array(trim($productName), $normalizedProductNames)) {
                     $newProducts[] = [
                         'name' => $productName,
                         'link' => $productLink
                     ];
-                }
-            // }
+                // }
+            }
         }
         
         foreach($newProducts as $newProduct) {
@@ -75,4 +75,7 @@ function checkForNewProducts() {
     }
 }
 
-checkForNewProducts();
+while(true){
+    checkForNewProducts();
+    sleep(20);
+}
