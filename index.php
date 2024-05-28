@@ -56,12 +56,12 @@ function checkForNewProducts() {
 
                 $normalizedProductNames = array_map('trim', $products);
 
-                // if (in_array(trim($productName), $normalizedProductNames)) {
+                if (in_array(trim($productName), $normalizedProductNames)) {
                     $newProducts[] = [
                         'name' => $productName,
                         'link' => $productLink
                     ];
-                // }
+                }
             // }
         }
         
