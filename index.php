@@ -91,5 +91,7 @@ function checkForNewProducts() {
     }
 }
 
-
-checkForNewProducts();
+while(true) {
+    checkForNewProducts();
+    sleep(20);
+}
