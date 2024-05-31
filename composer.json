@@ -1,0 +1,11 @@
+{
+  "name": "track-product",
+  "description": "A simple PHP app",
+  "require": {
+    "php": "^7.4 || ^8.0",
+    "ext-curl": "*"
+  },
+  "scripts": {
+    "start": "php -S 0.0.0.0:$PORT index.php"
+  }
+}
